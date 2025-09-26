@@ -151,9 +151,10 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <h1 className="text-5xl md:text-7xl font-playfair font-bold text-foreground mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-playfair font-bold text-foreground mb-6 leading-tight">
               Your Dream Wedding,{" "}
-              <span className="bg-gradient-hero bg-clip-text text-transparent">
+              <br className="hidden sm:block" />
+              <span className="bg-gradient-hero bg-clip-text text-transparent inline-block">
                 Perfectly Managed
               </span>
             </h1>
