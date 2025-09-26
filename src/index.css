@@ -2,95 +2,98 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* WedBliss Design System - Wedding Management Platform
+All colors must be HSL format for consistent theming
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
+    /* WedBliss Brand Colors */
+    --primary: 45 71% 39%; /* Deep Rose Gold #B8860B */
     --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
+    --primary-light: 45 71% 55%; /* Lighter Rose Gold */
+    --primary-glow: 45 71% 65%; /* Glow effect */
+    
+    /* Wedding Palette */
+    --champagne: 45 60% 88%; /* Champagne #F7E7CE */
+    --blush: 350 100% 88%; /* Blush Pink #FFC0CB */
+    --emerald: 145 60% 55%; /* Emerald Green */
+    --royal-purple: 250 45% 50%; /* Royal Purple */
+    --ivory: 60 100% 97%; /* Ivory White */
+    --sunset: 16 100% 71%; /* Sunset Orange */
+    --lavender: 240 67% 94%; /* Lavender */
+    --soft-gold: 51 100% 50%; /* Soft Gold */
+    
+    /* Semantic Colors */
+    --background: 45 60% 98%; /* Warm white background */
+    --foreground: 210 20% 22%; /* Charcoal Gray */
+    
+    --card: 0 0% 100%;
+    --card-foreground: 210 20% 22%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 20% 22%;
+    
+    --secondary: 45 60% 88%; /* Champagne */
+    --secondary-foreground: 210 20% 22%;
+    
+    --muted: 45 20% 96%; /* Light champagne */
+    --muted-foreground: 210 15% 46%;
+    
+    --accent: 350 100% 95%; /* Light blush */
+    --accent-foreground: 210 20% 22%;
+    
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    --border: 45 30% 91%;
+    --input: 45 30% 91%;
+    --ring: 45 71% 39%; /* Rose gold focus ring */
+    
+    --radius: 0.75rem;
+    
+    /* Wedding-specific Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--champagne)));
+    --gradient-elegant: linear-gradient(180deg, hsl(var(--champagne)), hsl(var(--blush)));
+    --gradient-royal: linear-gradient(135deg, hsl(var(--royal-purple)), hsl(var(--lavender)));
+    --gradient-sunset: linear-gradient(135deg, hsl(var(--sunset)), hsl(var(--soft-gold)));
+    
+    /* Wedding Shadows */
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.2);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.3);
+    --shadow-soft: 0 4px 20px -4px hsl(var(--primary) / 0.1);
+    
+    /* Animations */
+    --transition-elegant: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --bounce-gentle: cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    --background: 210 20% 6%;
     --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
+    
+    --primary: 45 71% 45%; /* Brighter rose gold for dark mode */
+    --primary-foreground: 210 20% 6%;
+    
+    --card: 210 20% 8%;
     --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
+    
+    --popover: 210 20% 8%;
     --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
+    
+    --secondary: 210 20% 15%;
     --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
+    
+    --muted: 210 20% 12%;
     --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
+    
+    --accent: 210 20% 15%;
     --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    --border: 210 20% 15%;
+    --input: 210 20% 15%;
+    --ring: 45 71% 45%;
   }
 }
 
@@ -101,5 +104,91 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  /* Elegant animations */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.6s var(--bounce-gentle) forwards;
+  }
+  
+  /* Wedding-specific components */
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-elegant {
+    background: var(--gradient-elegant);
+  }
+  
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .transition-elegant {
+    transition: var(--transition-elegant);
+  }
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+  }
+  50% { 
+    transform: translateY(-20px) rotate(5deg); 
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  }
+  to {
+    box-shadow: 0 0 30px hsl(var(--primary) / 0.6), 0 0 40px hsl(var(--primary) / 0.4);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
